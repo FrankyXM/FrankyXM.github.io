@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<style>
+			#myCanvas{
+				border-style: solid;
+				background-color: gray;
+			}
+		</style>
+	
+	</head>
+
+	<body>
+		<canvas id="myCanvas" height="600px" width="1300px" onclick="draw()"></canvas>
+	
+		<script>
+			function draw(){
+				var c=document.getElementById("myCanvas");
+				var rectangle=c.getContext("2d");
+				rectangle.rect(0,0,c.height/2,c.height/2)
+				rectangle.fillStyle=getRandomColor();
+				rectangle.fill();
+			}
+			
+			function getRandomColor() {
+				var letters = '0123456789ABCDEF'.split('');
+				var color = '#';
+				for (var i = 0; i < 6; i++ ) {
+					color += letters[Math.floor(Math.random() * 16)];
+				}
+				return color;
+			}
+		
+		</script>
+		
+	</body>
+
+</html>
